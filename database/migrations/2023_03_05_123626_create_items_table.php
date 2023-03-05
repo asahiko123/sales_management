@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
+            $table->integer('price');
+            $table->boolean('is_selling')->default(true);
+            $table->string('memo')->nullable();
             $table->timestamps();
         });
     }
