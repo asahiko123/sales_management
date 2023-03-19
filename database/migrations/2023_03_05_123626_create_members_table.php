@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('members', function (Blueprint $table) {
             $table->id();
-            $table->integer('price');
-            $table->boolean('is_selling')->default(true);
-            $table->string('memo')->nullable();
+            $table->string('members_code')->comment('社員コード');
+            $table->string('name')->comment('氏名');
+            $table->unsignedBigInteger('department_id')->comment('所属部署ID');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('members');
     }
 };
