@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('department', function (Blueprint $table) {
             $table->id();
+            $table->date('start_date')->comment('開始日');
+            $table->date('end_date')->comment('終了日');
+            $table->string('department_code')->comment('部門コード');
+            $table->string('department_name')->comment('部門名');
+            $table->string('upper_depertment')->comment('上位部門コード');
+            $table->string('team_layer')->comment('組織階層');
             $table->timestamps();
         });
     }

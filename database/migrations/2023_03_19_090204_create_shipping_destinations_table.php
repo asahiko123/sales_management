@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('shipping_destinations', function (Blueprint $table) {
             $table->id();
             $table->string('customer_code')->comment('取引先コード');
-            $table->integer('customer_id')->comment('出荷先番号');
+            $table->string('customer_id')->comment('出荷先番号');
             $table->string('shipping_destination')->comment('出荷先名');
             $table->string('shipping_destination_adress')->comment('出荷先住所');
             $table->string('shipping_destination_adress_2')->comment('出荷先住所2');
